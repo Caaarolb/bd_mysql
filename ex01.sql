@@ -119,33 +119,35 @@ SELECT * FROM colaboradores_beneficios;
 SHOW TABLES;
 DESCRIBE enderecos;
 
+-- Retorno de coloaboradores com salario maior que 2000    
 SELECT 
-    Colaboradores.nome AS Nome,
-    Colaboradores.sobrenome AS Sobrenome,
-    Cargos.nome AS Cargo,
-    Cargos.salario AS Salario
+Colaboradores.nome AS Nome,
+Colaboradores.sobrenome AS Sobrenome,
+Cargos.nome AS Cargo,
+Cargos.salario AS Salario
 FROM 
-    Colaboradores
+Colaboradores
 INNER JOIN 
-    Cargos
+Cargos
 ON 
-    Colaboradores.id_cargo = Cargos.id_cargo
+Colaboradores.id_cargo = Cargos.id_cargo
 WHERE 
-    Cargos.salario > 2000;
-    
-    SELECT 
-    Colaboradores.nome AS Nome,
-    Colaboradores.sobrenome AS Sobrenome,
-    Cargos.nome AS Cargo,
-    Cargos.salario AS Salario
+Cargos.salario > 2000;
+
+-- Retorno de coloaboradores com salario menor que 2000    
+SELECT 
+Colaboradores.nome AS Nome,
+Colaboradores.sobrenome AS Sobrenome,
+Cargos.nome AS Cargo,
+Cargos.salario AS Salario
 FROM 
-    Colaboradores
+Colaboradores
 INNER JOIN 
-    Cargos
+Cargos
 ON 
-    Colaboradores.id_cargo = Cargos.id_cargo
+Colaboradores.id_cargo = Cargos.id_cargo
 WHERE 
-    Cargos.salario < 2000;
+Cargos.salario < 2000;
     
 
 -- troca de salario 
