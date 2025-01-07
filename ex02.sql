@@ -2,12 +2,12 @@ CREATE DATABASE Ecommerce;
 USE Ecommerce;
 
 CREATE TABLE produtos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100),
-    descricao TEXT,
-    preco DECIMAL(10, 2),
-    categoria VARCHAR(50),
-    quantidade_em_estoque INT
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100),
+descricao TEXT,
+preco DECIMAL(10, 2),
+categoria VARCHAR(50),
+quantidade_em_estoque INT
 );
 
 SELECT * FROM produtos;
