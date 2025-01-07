@@ -4,62 +4,62 @@ USE ServicoRH;
 
 -- Tabela de departamentos
 CREATE TABLE Departamentos (
-    id_departamento INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    descricao VARCHAR(255)
+id_departamento INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+descricao VARCHAR(255)
 );
 
 -- Tabela de cargos
 CREATE TABLE Cargos (
-    id_cargo INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    salario DECIMAL(10, 2) NOT NULL,
-    id_departamento INT,
-    FOREIGN KEY (id_departamento) REFERENCES Departamentos(id_departamento)
+id_cargo INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+salario DECIMAL(10, 2) NOT NULL,
+id_departamento INT,
+FOREIGN KEY (id_departamento) REFERENCES Departamentos(id_departamento)
 );
 
 -- Tabela de colaboradores
 CREATE TABLE Colaboradores (
-    id_colaborador INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    sobrenome VARCHAR(100) NOT NULL,
-    data_nascimento DATE NOT NULL,
-    cpf VARCHAR(14) NOT NULL UNIQUE,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    telefone VARCHAR(15),
-    data_admissao DATE NOT NULL,
-    id_cargo INT,
-    FOREIGN KEY (id_cargo) REFERENCES Cargos(id_cargo)
+id_colaborador INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+sobrenome VARCHAR(100) NOT NULL,
+data_nascimento DATE NOT NULL,
+cpf VARCHAR(14) NOT NULL UNIQUE,
+email VARCHAR(100) NOT NULL UNIQUE,
+telefone VARCHAR(15),
+data_admissao DATE NOT NULL,
+id_cargo INT,
+FOREIGN KEY (id_cargo) REFERENCES Cargos(id_cargo)
 );
 
 -- Tabela de endereços dos colaboradores
 CREATE TABLE Enderecos (
-    id_endereco INT AUTO_INCREMENT PRIMARY KEY,
-    id_colaborador INT,
-    rua VARCHAR(100) NOT NULL,
-    numero VARCHAR(10) NOT NULL,
-    complemento VARCHAR(50),
-    bairro VARCHAR(50) NOT NULL,
-    cidade VARCHAR(50) NOT NULL,
-    estado VARCHAR(2) NOT NULL,
-    cep VARCHAR(9) NOT NULL,
-    FOREIGN KEY (id_colaborador) REFERENCES Colaboradores(id_colaborador)
+id_endereco INT AUTO_INCREMENT PRIMARY KEY,
+id_colaborador INT,
+rua VARCHAR(100) NOT NULL,
+numero VARCHAR(10) NOT NULL,
+complemento VARCHAR(50),
+bairro VARCHAR(50) NOT NULL,
+cidade VARCHAR(50) NOT NULL,
+estado VARCHAR(2) NOT NULL,
+cep VARCHAR(9) NOT NULL,
+FOREIGN KEY (id_colaborador) REFERENCES Colaboradores(id_colaborador)
 );
 
 -- Tabela de benefícios dos colaboradores
 CREATE TABLE Beneficios (
-    id_beneficio INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    descricao VARCHAR(255)
+id_beneficio INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+descricao VARCHAR(255)
 );
 
 -- Tabela de relação entre colaboradores e benefícios
 CREATE TABLE Colaboradores_Beneficios (
-    id_colaborador INT,
-    id_beneficio INT,
-    PRIMARY KEY (id_colaborador, id_beneficio),
-    FOREIGN KEY (id_colaborador) REFERENCES Colaboradores(id_colaborador),
-    FOREIGN KEY (id_beneficio) REFERENCES Beneficios(id_beneficio)
+id_colaborador INT,
+id_beneficio INT,
+PRIMARY KEY (id_colaborador, id_beneficio),
+FOREIGN KEY (id_colaborador) REFERENCES Colaboradores(id_colaborador),
+FOREIGN KEY (id_beneficio) REFERENCES Beneficios(id_beneficio)
 );
 
 SELECT * FROM cargos;
