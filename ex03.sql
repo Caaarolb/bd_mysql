@@ -2,12 +2,12 @@ CREATE DATABASE Escola;
 USE Escola;
 
 CREATE TABLE estudantes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100),
-    idade INT,
-    nota DECIMAL(3, 1),
-    curso VARCHAR(50),
-    data_matricula DATE
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100),
+idade INT,
+nota DECIMAL(3, 1),
+curso VARCHAR(50),
+data_matricula DATE
 );
 
 SELECT * FROM estudantes;
