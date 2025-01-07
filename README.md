@@ -38,12 +38,21 @@ As queries para cada atividade estão salvas como arquivos `.SQL`.
       source caminho_do_arquivo.sql;
       ```
 
-## 💻 Exemplos de Consultas
+## 💻 Exemplo de Consulta
 
-Aqui estão alguns exemplos de consultas realizadas nas atividades:
+🛍️ Consultas de Produtos (E-commerce)
 
-### 👩‍💼 Consultas de Funcionários (Serviço de RH)
+```
+-- Selecionar todos os produtos com preço maior que 500
+SELECT * FROM produtos WHERE preco > 500;
+```
 
-```sql
--- Selecionar todos os funcionários com salário maior que 5000
-SELECT * FROM funcionari
+```
+-- Selecionar todos os produtos com preço menor que 500
+SELECT * FROM produtos WHERE preco < 500;
+```
+
+
+
+
+
